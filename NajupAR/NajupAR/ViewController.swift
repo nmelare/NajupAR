@@ -14,20 +14,30 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: TestARSCNView!
     
+    
+    
     let coaching = Coaching()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         sceneView.delegate = self
-        //sceneView.showsStatistics = true
         
         setupCoaching()
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(gesture)
         
+        let button = UIButton()
+        button.backgroundColor = UIColor.red
+        button.frame = CGRect(x: self.view.frame.width/2 - 25, y: self.view.frame.height/2 + 320, width: 50, height: 50)
+        button.layer.cornerRadius = 25
+        button.addTarget(self, action: #selector(), for: UIControl.Event)
+
+        sceneView.addSubview(button)
     }
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,11 +61,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
  
         }
     }
-    
-//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
-//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-//        print("Plane Anchor updated with extent:", planeAnchor.extent)
-//    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
