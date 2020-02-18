@@ -16,19 +16,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     let coaching = Coaching()
     
-    //class ARPlaneAnchor: ARAnchor
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         sceneView.delegate = self
         //sceneView.showsStatistics = true
         
-        let bloco = SCNScene(named: "art.scnassets/bloco_2x2.scn")!
-        sceneView.scene = bloco
-        
         setupCoaching()
         
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        sceneView.addGestureRecognizer(gesture)
         
     }
     
@@ -48,10 +45,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
-        print("New Plane Anchor found at extent:", planeAnchor.extent)
-        
+        if anchor.name == "Anchor for object placement" {
+            let block = Block_2x2()
+            node.addChildNode(block)
+ 
+        }
     }
+    
+//    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+//        guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
+//        print("Plane Anchor updated with extent:", planeAnchor.extent)
+//    }
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -69,4 +73,16 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         coaching.setup(sceneView: sceneView)
         coaching.addCoaching()
     }
+    
+    @objc func handleTap(_ recognizer: UITapGestureRecognizer) {
+        let location = recognizer.location(in: sceneView)
+        if let query = sceneView.raycastQuery(from: location, allowing: .estimatedPlane, alignment: .horizontal), let firstResult = sceneView.session.raycast(query).first {
+            let anchor = ARAnchor(name: "Anchor for object placement", transform: firstResult.worldTransform)
+            sceneView.session.add(anchor: anchor)
+            print("Add anchor")
+        } else {
+            print("Warning: Object placement failed.")
+        }
+    }
+    
 }
