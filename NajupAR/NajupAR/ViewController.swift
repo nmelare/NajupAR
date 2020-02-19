@@ -14,7 +14,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: TestARSCNView!
     
-    
+    let popOverTableView = PopOverViewController()
     
     let coaching = Coaching()
     
@@ -32,11 +32,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         button.backgroundColor = UIColor.red
         button.frame = CGRect(x: self.view.frame.width/2 - 25, y: self.view.frame.height/2 + 320, width: 50, height: 50)
         button.layer.cornerRadius = 25
-        button.addTarget(self, action: #selector(), for: UIControl.Event)
+        button.addTarget(self, action: Selector(("pressButton")), for: .touchUpInside)
 
         sceneView.addSubview(button)
     }
     
+    func pressButton(_ sender: UIButton) {
+        popOverTableView
+    }
 
     
     override func viewWillAppear(_ animated: Bool) {
