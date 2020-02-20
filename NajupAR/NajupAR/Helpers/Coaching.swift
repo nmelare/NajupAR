@@ -11,9 +11,11 @@ import ARKit
 class Coaching: ARCoachingOverlayView, ARCoachingOverlayViewDelegate {
     
     private weak var sceneView: TestARSCNView!
+    private weak var viewController: ViewController!
     
-    func setup(sceneView: TestARSCNView) {
+    func setup(sceneView: TestARSCNView, viewController: ViewController) {
         self.sceneView = sceneView
+        self.viewController = viewController
     }
     
     func addCoaching() {
@@ -53,11 +55,13 @@ class Coaching: ARCoachingOverlayView, ARCoachingOverlayViewDelegate {
     /// - Tag: Coaching Activate
     func coachingOverlayViewWillActivate(_ coachingOverlayView: ARCoachingOverlayView) {
         sceneView.vai()
+        viewController.disableView()
     }
     
     /// - Tag: Coaching Deactivate
     func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
         sceneView.volta()
+        viewController.enableView()
     }
     
     /// - Tag: Coaching
