@@ -92,6 +92,11 @@ class ViewController: UIViewController {
         sceneView.addGestureRecognizer(gesture)
     }
     
+    func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
+        let plane = Plane(anchor)
+        node.addChildNode(plane)
+    }
+    
     // MARK: - Delegate functions
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user

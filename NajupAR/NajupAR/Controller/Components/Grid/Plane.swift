@@ -36,9 +36,4 @@ class Plane: SCNNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
-        let plane = Plane(anchor)
-        node.addChildNode(plane)
-    }
-    
 }
