@@ -20,7 +20,7 @@ class Block_2x4: SCNNode {
     
     func loadModel() {
         let nodeContainer = SCNNode()
-        guard let block = SCNScene(named: "art.scnassets/block_2x4.dae") else {
+        guard let block = SCNScene(named: "art.scnassets/Block_2x4/block_2x4.obj") else {
             NSLog("Scene 2x4 not found")
             return
         }

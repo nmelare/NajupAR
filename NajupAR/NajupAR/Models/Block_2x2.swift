@@ -20,7 +20,7 @@ class Block_2x2: SCNNode {
     
     func loadModel() {
         let nodeContainer = SCNNode()
-        guard let block = SCNScene(named: "art.scnassets/block_2x2.obj") else {
+        guard let block = SCNScene(named: "art.scnassets/Block_2x2/block_2x2.obj") else {
             NSLog("Scene 2x2 not found")
             return
         }
