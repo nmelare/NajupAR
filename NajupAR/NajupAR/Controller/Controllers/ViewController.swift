@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var tableViewPopOverDataSource = PopOverTableViewDataSource()
     var tableViewPopOverDelegate = PopOverTableViewDelegate()
     let button = UIButton()
+    var planes = [ARPlaneAnchor: Plane]()
+    var plane:  Plane!
     
     let coaching = Coaching()
     
@@ -94,8 +96,17 @@ class ViewController: UIViewController {
     
     func addPlane(node: SCNNode, anchor: ARPlaneAnchor) {
         let plane = Plane(anchor)
+        planes[anchor] = plane
         node.addChildNode(plane)
+        
     }
+    
+    func updatePlane(anchor: ARPlaneAnchor) {
+        if let plane = planes[anchor] {
+            plane.update(anchor)
+        }
+    }
+    
     
     // MARK: - Delegate functions
     func session(_ session: ARSession, didFailWithError error: Error) {

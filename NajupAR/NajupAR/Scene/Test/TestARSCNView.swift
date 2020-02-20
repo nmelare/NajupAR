@@ -28,6 +28,11 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         self.node = node
+        
+        if let planeAnchor = anchor as? ARPlaneAnchor{
+            self.viewController.addPlane(node: node, anchor: planeAnchor)
+        }
+        
         if anchor.name == "Anchor for object placement" {
             if(self.selected == "2x2") {
                 let block2x2 = Block_2x2()
@@ -39,6 +44,7 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
                 //self.scene.rootNode.addChildNode(block2x4)
                 node.addChildNode(block2x4)
             }
+            
         }
         
         
@@ -51,6 +57,11 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     
     func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
         self.node = node
+        
+        if let planeAnchor = anchor as? ARPlaneAnchor{
+            self.viewController.updatePlane(anchor: planeAnchor)\
+        }
+        
     }
     
     func addBlock2x2() {
@@ -68,4 +79,5 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     func config(viewController: ViewController) {
         self.viewController = viewController
     }
+
 }
