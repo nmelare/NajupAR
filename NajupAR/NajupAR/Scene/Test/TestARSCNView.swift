@@ -59,7 +59,7 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
         self.node = node
         
         if let planeAnchor = anchor as? ARPlaneAnchor{
-            self.viewController.updatePlane(anchor: planeAnchor)\
+            self.viewController.updatePlane(anchor: planeAnchor)
         }
         
     }

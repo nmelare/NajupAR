@@ -9,6 +9,9 @@
 import SceneKit
 
 class Block_2x2: SCNNode {
+    var maskBlock2x2: UInt32 = 0x1 << 0
+    var block2x4: Block_2x4!
+    
     override init() {
         super.init()
         loadModel()
@@ -32,6 +35,8 @@ class Block_2x2: SCNNode {
     }
     
     func setPosition() {
-        
+        self.physicsBody?.categoryBitMask = Int(maskBlock2x2)
+        self.physicsBody?.contactTestBitMask = Int(block2x4.maskBlock2x4)
     }
+    
 }
