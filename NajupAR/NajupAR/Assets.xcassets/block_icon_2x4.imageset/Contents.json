@@ -3,6 +3,16 @@
     {
       "idiom" : "universal",
       "filename" : "block_icon_2x4.png"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "block_2x4_dark.pdf",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {
