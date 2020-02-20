@@ -20,6 +20,7 @@
 		6FD88FEF23FC707F007283F1 /* Block_2x4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD88FEE23FC707F007283F1 /* Block_2x4.swift */; };
 		6FD88FF123FC8260007283F1 /* PopOverTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD88FF023FC8260007283F1 /* PopOverTableViewDataSource.swift */; };
 		6FDB891723FDA0BA0021CA89 /* PopOverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDB891623FDA0BA0021CA89 /* PopOverTableViewCell.swift */; };
+		75A99D1E23FF0261001FC00B /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A99D1D23FF0261001FC00B /* Plane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		6FD88FEE23FC707F007283F1 /* Block_2x4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block_2x4.swift; sourceTree = "<group>"; };
 		6FD88FF023FC8260007283F1 /* PopOverTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverTableViewDataSource.swift; sourceTree = "<group>"; };
 		6FDB891623FDA0BA0021CA89 /* PopOverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverTableViewCell.swift; sourceTree = "<group>"; };
+		75A99D1D23FF0261001FC00B /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		6F0FD41323FDD13000ADC20B /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				75A99D1C23FF0229001FC00B /* Grid */,
 				6F0FD41423FDD13A00ADC20B /* PopOver */,
 			);
 			path = Components;
@@ -168,6 +171,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		75A99D1C23FF0229001FC00B /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				75A99D1D23FF0261001FC00B /* Plane.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD88FEA23FB0EBB007283F1 /* TestARSCNView.swift in Sources */,
+				75A99D1E23FF0261001FC00B /* Plane.swift in Sources */,
 				6FD88FE823FB06CB007283F1 /* Coaching.swift in Sources */,
 				6FD88FF123FC8260007283F1 /* PopOverTableViewDataSource.swift in Sources */,
 				6FDB891723FDA0BA0021CA89 /* PopOverTableViewCell.swift in Sources */,
@@ -393,7 +405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X54K5PJVGU;
+				DEVELOPMENT_TEAM = C7LP8JSPCF;
 				INFOPLIST_FILE = NajupAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -411,7 +423,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X54K5PJVGU;
+				DEVELOPMENT_TEAM = C7LP8JSPCF;
 				INFOPLIST_FILE = NajupAR/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
