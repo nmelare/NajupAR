@@ -10,7 +10,7 @@ import UIKit
 
 class PopOverTableViewDataSource: NSObject, UITableViewDataSource {
 
-    var blocks = ["block_2x2", "block_2x4"]
+    var blocks = ["2x2", "2x4"]
     var imageBlocks = [UIImage(named: "block_icon_2x2"), UIImage(named: "block_icon_2x4")]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
