@@ -29,11 +29,11 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         self.node = node
         if anchor.name == "Anchor for object placement" {
-            if(self.selected == "block_icon_2x2") {
+            if(self.selected == "2x2") {
                 let block2x2 = Block_2x2()
                 //self.scene.rootNode.addChildNode(block2x2)
                 node.addChildNode(block2x2)
-            } else if(self.selected == "block_icon_2x4") {
+            } else if(self.selected == "2x4") {
                 let block2x4 = Block_2x4()
                 viewController.sceneView.scene.rootNode.addChildNode(block2x4)
                 //self.scene.rootNode.addChildNode(block2x4)
@@ -54,14 +54,14 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     }
     
     func addBlock2x2() {
-        print("block_icon_2x2")
-        self.selected = "block_icon_2x2"
+        print("2x2")
+        self.selected = "2x2"
         viewController.disableTableView()
     }
     
     func addBlock2x4() {
-        print("block_icon_2x4")
-        self.selected = "block_icon_2x2"
+        print("2x4")
+        self.selected = "2x4"
         viewController.disableTableView()
     }
     
