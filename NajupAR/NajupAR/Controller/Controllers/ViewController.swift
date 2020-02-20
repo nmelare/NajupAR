@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal, .vertical]
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
         sceneView.session.run(configuration)
     }
     
@@ -47,12 +49,14 @@ class ViewController: UIViewController {
     
     func setupScene() {
         sceneView.setup()
+        sceneView.config(viewController: self)
     }
     
     func setupTable() {
         tableViewPopOver.isHidden = true
         tableViewPopOver.dataSource = tableViewPopOverDataSource
         tableViewPopOver.delegate = tableViewPopOverDelegate
+        tableViewPopOverDelegate.config(viewController: self)
     }
     
     func setupCoaching() {
@@ -73,6 +77,11 @@ class ViewController: UIViewController {
         button.isHidden = true
         tableViewPopOver.isHidden = true
     }
+    
+    func disableTableView() {
+        tableViewPopOver.isHidden = true
+    }
+    
     func enableView() {
         print("enableView")
         button.isHidden = false
@@ -107,6 +116,7 @@ class ViewController: UIViewController {
             print("Warning: Object placement failed.")
         }
     }
+    
     @objc func pressButton(_ sender: Any) {
         tableViewPopOver.isHidden = false
     }

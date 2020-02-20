@@ -9,6 +9,10 @@
 import ARKit
 
 class TestARSCNView: ARSCNView, ARSCNViewDelegate {
+    var tableViewPopOverDelegate = PopOverTableViewDelegate()
+    weak var viewController: ViewController!
+    var node: SCNNode!
+    var selected: String!
     
     func setup() {
         delegate = self
@@ -23,9 +27,45 @@ class TestARSCNView: ARSCNView, ARSCNViewDelegate {
     }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        self.node = node
         if anchor.name == "Anchor for object placement" {
-            let block = Block_2x2()
-            node.addChildNode(block)
+            if(self.selected == "block_icon_2x2") {
+                let block2x2 = Block_2x2()
+                //self.scene.rootNode.addChildNode(block2x2)
+                node.addChildNode(block2x2)
+            } else if(self.selected == "block_icon_2x4") {
+                let block2x4 = Block_2x4()
+                viewController.sceneView.scene.rootNode.addChildNode(block2x4)
+                //self.scene.rootNode.addChildNode(block2x4)
+                node.addChildNode(block2x4)
+            }
         }
+        
+        
+//
+//        if anchor.name == "Anchor for object placement" {
+//            let block = Block_2x2()
+//            node.addChildNode(block)
+//        }
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+        self.node = node
+    }
+    
+    func addBlock2x2() {
+        print("block_icon_2x2")
+        self.selected = "block_icon_2x2"
+        viewController.disableTableView()
+    }
+    
+    func addBlock2x4() {
+        print("block_icon_2x4")
+        self.selected = "block_icon_2x2"
+        viewController.disableTableView()
+    }
+    
+    func config(viewController: ViewController) {
+        self.viewController = viewController
     }
 }
