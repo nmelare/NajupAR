@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var sceneView: TestARSCNView!
     @IBOutlet var tableViewPopOver: UITableView!
     var tableViewPopOverDataSource = PopOverTableViewDataSource()
+    var tableViewPopOverDelegate = PopOverTableViewDelegate()
     let button = UIButton()
     
     let coaching = Coaching()
@@ -51,6 +52,7 @@ class ViewController: UIViewController {
     func setupTable() {
         tableViewPopOver.isHidden = true
         tableViewPopOver.dataSource = tableViewPopOverDataSource
+        tableViewPopOver.delegate = tableViewPopOverDelegate
     }
     
     func setupCoaching() {

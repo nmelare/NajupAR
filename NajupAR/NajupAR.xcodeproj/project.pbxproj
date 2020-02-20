@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ECA40D123FEF1DA0060839E /* PopOverTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECA40D023FEF1DA0060839E /* PopOverTableViewDelegate.swift */; };
 		6F2A56FA23F5E3C70032EFF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A56F923F5E3C70032EFF9 /* AppDelegate.swift */; };
 		6F2A56FC23F5E3C70032EFF9 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F2A56FB23F5E3C70032EFF9 /* art.scnassets */; };
 		6F2A56FE23F5E3C70032EFF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A56FD23F5E3C70032EFF9 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ECA40D023FEF1DA0060839E /* PopOverTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverTableViewDelegate.swift; sourceTree = "<group>"; };
 		6F2A56F623F5E3C70032EFF9 /* NajupAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NajupAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2A56F923F5E3C70032EFF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F2A56FB23F5E3C70032EFF9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				6FDB891623FDA0BA0021CA89 /* PopOverTableViewCell.swift */,
 				6FD88FF023FC8260007283F1 /* PopOverTableViewDataSource.swift */,
+				1ECA40D023FEF1DA0060839E /* PopOverTableViewDelegate.swift */,
 			);
 			path = PopOver;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				6FD88FED23FC5A7A007283F1 /* Block_2x2.swift in Sources */,
 				6FD88FEF23FC707F007283F1 /* Block_2x4.swift in Sources */,
 				6F2A56FA23F5E3C70032EFF9 /* AppDelegate.swift in Sources */,
+				1ECA40D123FEF1DA0060839E /* PopOverTableViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
