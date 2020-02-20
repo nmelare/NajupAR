@@ -14,5 +14,9 @@ class PopOverTableViewDelegate: NSObject, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(blocks[indexPath.row])
+        if(indexPath.row == 0) {
+            //agora conseguimos puxar o bloco certo.
+        }
+        
     }
 }
