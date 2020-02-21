@@ -25,7 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1ECA40D023FEF1DA0060839E /* PopOverTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverTableViewDelegate.swift; sourceTree = "<group>"; };
-		6F2A56F623F5E3C70032EFF9 /* NajupAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NajupAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F2A56F623F5E3C70032EFF9 /* MonteO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonteO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F2A56F923F5E3C70032EFF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F2A56FB23F5E3C70032EFF9 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		6F2A56FD23F5E3C70032EFF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		6F2A56F723F5E3C70032EFF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6F2A56F623F5E3C70032EFF9 /* NajupAR.app */,
+				6F2A56F623F5E3C70032EFF9 /* MonteO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 			);
 			name = NajupAR;
 			productName = NajupAR;
-			productReference = 6F2A56F623F5E3C70032EFF9 /* NajupAR.app */;
+			productReference = 6F2A56F623F5E3C70032EFF9 /* MonteO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -412,7 +412,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathaliamelare.NajupAR;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MonteO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -430,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nathaliamelare.NajupAR;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MonteO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
