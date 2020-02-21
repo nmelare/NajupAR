@@ -11,9 +11,11 @@ import SceneKit
 class Block_2x2: SCNNode {
     var maskBlock2x2: UInt32 = 0x1 << 0
     var block2x4: Block_2x4!
+
     
     override init() {
         super.init()
+        self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(geometry: SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0), options: nil))
         loadModel()
     }
     
@@ -36,7 +38,8 @@ class Block_2x2: SCNNode {
     
     func setPosition() {
         self.physicsBody?.categoryBitMask = Int(maskBlock2x2)
-        self.physicsBody?.contactTestBitMask = Int(block2x4.maskBlock2x4)
+        self.physicsBody?.collisionBitMask = Int(block2x4.maskBlock2x4)
+        self.physicsBody?.isAffectedByGravity = false
     }
     
 }

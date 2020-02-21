@@ -8,23 +8,21 @@
 
 import ARKit
 
-class TestARSCNView: ARSCNView, ARSCNViewDelegate {
+class TestARSCNView: ARSCNView, ARSCNViewDelegate, SCNPhysicsContactDelegate {
     var tableViewPopOverDelegate = PopOverTableViewDelegate()
     weak var viewController: ViewController!
     var node: SCNNode!
     var selected: String!
-    
+
+
     func setup() {
+        self.scene.physicsWorld.contactDelegate = self
         delegate = self
     }
     
-    func vai() {
-        print("Vai")
-    }
-    
-    func volta() {
-        print("Volta")
-    }
+//    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+//        if ()
+//    }
     
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         self.node = node

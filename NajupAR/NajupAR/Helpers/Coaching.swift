@@ -54,13 +54,11 @@ class Coaching: ARCoachingOverlayView, ARCoachingOverlayViewDelegate {
     // MARK: - Callbacks
     /// - Tag: Coaching Activate
     func coachingOverlayViewWillActivate(_ coachingOverlayView: ARCoachingOverlayView) {
-        sceneView.vai()
         viewController.disableView()
     }
     
     /// - Tag: Coaching Deactivate
     func coachingOverlayViewDidDeactivate(_ coachingOverlayView: ARCoachingOverlayView) {
-        sceneView.volta()
         viewController.enableView()
     }
     
